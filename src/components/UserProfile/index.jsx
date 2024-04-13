@@ -1,10 +1,10 @@
 import React from 'react';
-// import SlideImg1 from "../../images/Sheba1.jpeg";
+import styles from './UserProfile.module.scss'
 
 
 const UserProfile = ({user}) => {
   return (
-    <div className="user-profile">
+    <div className={styles.userProfile}>
       <img src={ user.imgSrc} alt={`${user.firstName} ${user.lastName}`} />
       <div className="user-info">
         <h2>{`${user.firstName} ${user.lastName}`}</h2>

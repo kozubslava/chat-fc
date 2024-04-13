@@ -26,35 +26,39 @@ import styles from "./RegistrationForm.module.scss"
   initialValues={initialValues}
       validationSchema={registrationSchema}
       onSubmit={handleSubmit}>
-    <Form>
-      <div>
-        <Field type="text" name="firstName" placeholder="first name" />
+    <Form className={styles.form}> 
+      <div >
+        <Field type="text" name="firstName" placeholder="first name" className = {styles.imput}/>
         <ErrorMessage name="firstName" component={ErrorDetail}  className={styles.error} />
       </div>
       <div>
-        <Field type="text" name="lastName" placeholder="last name" />
+        <Field type="text" name="lastName" placeholder="last name" className = {styles.imput} />
         <ErrorMessage name="lastName" component={ErrorDetail} className={styles.error} />
       </div>
       
       <div>
-        <Field type="email" name="email"  label='email' placeholder="email"/>
+        <Field type="email" name="email"  label='email' placeholder="email" className = {styles.imput}/>
         <ErrorMessage name="email" component={ErrorDetail} className={styles.error} />
       </div>
       <div>
-        <Field type="password" name="password" placeholder="password"  />
+        <Field type="password" name="password" placeholder="password" className = {styles.imput} />
         <ErrorMessage name="password" component={ErrorDetail} className={styles.error}
           />
       </div>
       <div>
-          <Field type="password" name="confirm_password" placeholder="confirm passwordord"  />
+          <Field type="password" name="confirm_password" placeholder="confirm passwordord" className = {styles.imput} />
           <ErrorMessage name="confirm_password" component={ErrorDetail}className={styles.error}
           />
+          
       </div>
-      <div>
-        <label htmlFor="isMale" >Is Male:</label>
-        <Field type="checkbox" name="isMale" />
+      <div className = {styles.submit}>
+        <div className = {styles.imput}>
+          <label htmlFor="isMale" >Is Male:</label>
+          <Field type="checkbox" name="isMale" />
+        </div>
+        <button type="submit">Submit</button>
       </div>
-      <button type="submit">Submit</button>
+      
     </Form>
   </Formik>
   )

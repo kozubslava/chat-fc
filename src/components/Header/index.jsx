@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styles from './Header.module.scss'
 
 function Header (params) {
   return (
-    <header>
+    <header className={styles.hero}>
       <nav>
         <ul>
           <li>
