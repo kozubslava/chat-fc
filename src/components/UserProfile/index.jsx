@@ -11,7 +11,7 @@ const UserProfile = ({user}) => {
         <p>Email: {user.email}</p>
         <p>Gender: {user.isMale ? 'Male' : 'Female'}</p>
       </div>
-      <button>update data</button>
+      <button>Castomize profile</button>
     </div>
   );
 }

@@ -14,6 +14,9 @@ function Header (params) {
           </li>
         </ul>
       </nav>
+      <div>
+      <Link to='/registration'>Registration</Link>
+      </div>
       
     </header>
   );
