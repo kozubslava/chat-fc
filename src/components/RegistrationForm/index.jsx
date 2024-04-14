@@ -19,6 +19,7 @@ import styles from "./RegistrationForm.module.scss"
     function handleSubmit(values, actions) {
       console.log(values);
       actions.resetForm();
+      
     }
 
   return(
