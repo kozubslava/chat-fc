@@ -3,6 +3,7 @@ import HomePage from "./pages/HomePage";
 import ProfilePage from "./pages/ProfilePage";
 import Header from "./components/Header";
 import RegistrationPage from "./pages/RegistrationPage";
+import Footer from "./components/Footer/indexs";
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route exact path = '/profile' component={ProfilePage} />
         <Route exact path = '/registration' component={RegistrationPage}/>
       </Switch>
+      <Footer/>
     </>
   );
 }
