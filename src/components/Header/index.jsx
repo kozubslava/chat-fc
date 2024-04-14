@@ -5,18 +5,19 @@ import styles from './Header.module.scss'
 function Header (params) {
   return (
     <header className={styles.hero}>
-      <nav>
+      <nav className={styles.nav}>
         <ul>
-          <li>
-            <Link to='/'>Home</Link>
+          <li className={styles.link} >
+            <Link  to='/'>Home</Link>
           </li>
-          <li>
-            <Link to='/profile'>User profile</Link>
+          <li className={styles.link}>
+            <Link  to='/profile'>User Profile</Link>
           </li>
         </ul>
       </nav>
-      <div>
-      <Link to='/registration'>Registration</Link>
+      <h1>Chat-FC</h1>
+      <div className={styles.link}>
+        <Link  to='/registration'>Registration</Link>
       </div>
       
     </header>

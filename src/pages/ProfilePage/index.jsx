@@ -6,7 +6,7 @@ const ProfilePage = (props) => {
     firstName: 'Jone',
     lastName: 'Doe',
     isMale:true,
-    email: 'jone@doe',
+    email: 'jone@doe.com',
     password: '12345678',
     
     
