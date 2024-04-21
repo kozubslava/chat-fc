@@ -13,6 +13,9 @@ function Header (params) {
           <li className={styles.link}>
             <Link  to='/profile'>User Profile</Link>
           </li>
+          <li className={styles.link}>
+            <Link  to='/users'>Users</Link>
+          </li>
         </ul>
       </nav>
       <h1>Chat-FC</h1>

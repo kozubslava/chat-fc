@@ -4,9 +4,11 @@ import HomePage from "./pages/HomePage";
 import ProfilePage from "./pages/ProfilePage";
 import RegistrationPage from "./pages/RegistrationPage";
 import UserContext from "./contexts/userContext";
+import UsersPage from "./pages/Users";
 
 
 const userMocData = {
+  id:1,
   imgSrc: 'https://ic.pics.livejournal.com/pereverstal/78513478/101084/101084_800.jpg',
     firstName: 'MocJone',
     lastName: 'MocDoe',
@@ -24,6 +26,7 @@ const [user, setUser] = useState(userMocData)
         <Route exact path = '/' component={HomePage} />;
         <Route exact path = '/profile' component={ProfilePage} />
         <Route exact path = '/registration' component={RegistrationPage}/>
+        <Route exact path = '/users' component={UsersPage}/>
       </Switch>
     </UserContext.Provider>
   );
