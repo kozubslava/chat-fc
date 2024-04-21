@@ -1,6 +1,6 @@
 import { Form, Formik, Field, ErrorMessage } from "formik"
 // import React from "react";
-import { registrationSchema } from "../../utils/validation";
+import { USER_REGISTRATION_SCHEMA } from "../../utils/validation";
 import styles from "./RegistrationForm.module.scss"
 
 
@@ -25,7 +25,7 @@ import styles from "./RegistrationForm.module.scss"
   return(
   <Formik
   initialValues={initialValues}
-      validationSchema={registrationSchema}
+      validationSchema={USER_REGISTRATION_SCHEMA}
       onSubmit={handleSubmit}>
     <Form className={styles.form}> 
       <div >
