@@ -15,7 +15,6 @@ const fullName = `${user.firstName} ${user.lastName}`
         <p>Email: {user.email}</p>
         <p>Gender: {user.isMale ? 'Male' : 'Female'}</p>
       </div>
-      <button>Castomize profile</button>
     </div>
   );
 }
