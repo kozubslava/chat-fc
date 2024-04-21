@@ -1,14 +1,17 @@
 import React from 'react';
 import styles from './UserProfile.module.scss'
-import defaultImgSrc from "../../images/EXg7x-EWAAILbYK.jpeg";
+import CONSTANTS from '../../constants';
+
 
 const UserProfile = ({user}) => {
+  
+const fullName = `${user.firstName} ${user.lastName}`
 
   return (
     <div className={styles.userProfile}>
-      <img src={ user.imgSrc || defaultImgSrc} alt={`${user.firstName} ${user.lastName}`} />
+      <img src={ user.imgSrc || CONSTANTS.PLACEHOLDER_USER_PIC} alt={fullName} />
       <div className={styles.userInfo}>
-        <h2>{`${user.firstName} ${user.lastName}`}</h2>
+        <h2>{fullName}</h2>
         <p>Email: {user.email}</p>
         <p>Gender: {user.isMale ? 'Male' : 'Female'}</p>
       </div>

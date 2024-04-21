@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Footer.module.scss'
-import instagramImgSrc from "../../images/3955024.png";
-import youtubeImgSrc from "../../images/4494485.png";
+
 
 const Footer = () => {
+
+const instagramImgSrc = "/assets/images/3955024.png";
+const youtubeImgSrc = "/assets/images/4494485.png";
+
   return (
     <div className={styles.footer}>
       <div className={styles.media}>
