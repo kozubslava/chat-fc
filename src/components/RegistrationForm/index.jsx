@@ -1,7 +1,9 @@
+import React from "react";
 import { Form, Formik, Field, ErrorMessage } from "formik"
-// import React from "react";
+import {createUser} from "../../api"
 import { USER_REGISTRATION_SCHEMA } from "../../utils/validation";
 import styles from "./RegistrationForm.module.scss"
+
 
 
   const initialValues = {
@@ -9,23 +11,35 @@ import styles from "./RegistrationForm.module.scss"
     firstName: '',
     lastName: '',
     email: '',
-    isMale: true,
+    gender: '',
     password: '',
     confirm_password: ""
     
   };
   
-  function RegistrationForm(props) {
-    function handleSubmit(values, actions) {
-      console.log(values);
-      actions.resetForm();
+  const RegistrationForm = (props) => {
+    const handleSubmit = (values, formikBag) => {
+      const {gender, ...restUser} = values;
+
+      const newUserData = {
+        ...restUser,
+        isMale: gender === 'male',
+      };
+        
+      const respons =  createUser(newUserData).then((response) => {
+        console.log(respons);
+      });
+
       
-    }
+
+      formikBag.resetForm();
+      
+    };
 
   return(
   <Formik
   initialValues={initialValues}
-      validationSchema={USER_REGISTRATION_SCHEMA}
+      // validationSchema={USER_REGISTRATION_SCHEMA}
       onSubmit={handleSubmit}>
     <Form className={styles.form}> 
       <div >
@@ -50,14 +64,42 @@ import styles from "./RegistrationForm.module.scss"
           <Field type="password" name="confirm_password" placeholder="confirm passwordord" className = {styles.imput} />
           <ErrorMessage name="confirm_password" component={ErrorDetail}className={styles.error}
           />
+
+<fieldset className = {styles.submit}>
+          <legend className={styles.genderHeading}>Gender: </legend>
+          <div className={styles.radioContainer}>
+            <Field type='radio' name='gender' id='male' value='male' />
+            <label
+              htmlFor='male'
+              // className={cx(styles.label, styles.radioLabel)}
+            >
+              Male
+            </label>
+          </div>
+          <div className={styles.radioContainer}>
+            <Field type='radio' name='gender' id='female' value='female' />
+            <label
+              htmlFor='female'
+              // className={cx(styles.label, styles.radioLabel)}
+            >
+              Female
+            </label>
+          </div>
+          <ErrorMessage
+            name='gender'
+            component='div'
+            className={styles.error}
+          />
+        </fieldset>
           
       </div>
       <div className = {styles.submit}>
-        <div className = {styles.imput}>
-          <label htmlFor="isMale" >Is Male:</label>
-          <Field type="checkbox" name="isMale" />
-        </div>
-        <button type="submit">Submit</button>
+        <button type="submit">
+          Submit
+          </button>
+        <button type='reset' >
+            Reset fields
+          </button>
       </div>
       
     </Form>

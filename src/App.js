@@ -7,18 +7,18 @@ import UserContext from "./contexts/userContext";
 import UsersPage from "./pages/Users";
 
 
-const userMocData = {
-  id:1,
-  imgSrc: 'https://ic.pics.livejournal.com/pereverstal/78513478/101084/101084_800.jpg',
-    firstName: 'MocJone',
-    lastName: 'MocDoe',
-    isMale:false,
-    email: 'jone@doe.com',
-    password: '12345678',
-}
+// const userMocData = {
+//   id:1,
+//   imgSrc: 'https://ic.pics.livejournal.com/pereverstal/78513478/101084/101084_800.jpg',
+//     firstName: 'MocJone',
+//     lastName: 'MocDoe',
+//     isMale:false,
+//     email: 'jone@doe.com',
+//     password: '12345678',
+// }
 
 function App() {
-const [user, setUser] = useState(userMocData)
+const [user, setUser] = useState(null)
 
   return (
     <UserContext.Provider value={[user, setUser]}>

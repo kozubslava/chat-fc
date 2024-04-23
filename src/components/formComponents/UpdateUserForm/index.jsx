@@ -9,7 +9,7 @@ const initialValues = {
   firstName: '',
   lastName: '',
   email: '',
-  isMale: true,
+  isMale: '',
   password: '',
   confirm_password: ""
   
@@ -26,7 +26,7 @@ const UpdateUserForm = (props) => {
       if (value !== '' && key !== 'gender') {
         updatedUserFields[key] = value;
       } else if (value !== '' && key === 'gender') {
-        
+        updatedUserFields.isMale = value === 'male';
       }
     });
 
@@ -68,10 +68,32 @@ const UpdateUserForm = (props) => {
           
       </div>
       <div className={styles.submit}>
-        <div className={styles.imput}>
-          <label htmlFor="isMale" >Is Male:</label>
-          <Field type="checkbox" name="isMale" />
-        </div>
+        <fieldset className = {styles.submit}>
+          <legend className={styles.genderHeading}>Gender: </legend>
+          <div className={styles.radioContainer}>
+            <Field type='radio' name='gender' id='male' value='male' />
+            <label
+              htmlFor='male'
+              // className={cx(styles.label, styles.radioLabel)}
+            >
+              Male
+            </label>
+          </div>
+          <div className={styles.radioContainer}>
+            <Field type='radio' name='gender' id='female' value='female' />
+            <label
+              htmlFor='female'
+              // className={cx(styles.label, styles.radioLabel)}
+            >
+              Female
+            </label>
+          </div>
+          <ErrorMessage
+            name='gender'
+            component='div'
+            className={styles.error}
+          />
+        </fieldset>
         <button type="submit">Submit</button>
         <button type='reset' >
             Reset fields

@@ -13,7 +13,7 @@ const fullName = `${user.firstName} ${user.lastName}`
       <div className={styles.userInfo}>
         <h2>{fullName}</h2>
         <p>Email: {user.email}</p>
-        <p>Gender: {user.isMale ? 'Male' : 'Female'}</p>
+        <p>Gender: {user.isMale ? 'male' : 'female'}</p>
       </div>
     </div>
   );
